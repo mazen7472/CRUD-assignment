@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="images/bookmark.png" type="image/x-icon" > 
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="crud py-5 w-75 mx-auto">
+            <div class="title text-center mx-auto mb-5">
+                <h1 class="fw-bolder display-5">Bookmarker</h1>
+            </div>
+            <div class="bookmark-body py-5">
+              <h2 class="text-center mb-5 fw-bolder display-6"><i class="fa-solid fa-bookmark fa-xs"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark fa-xs"></i></h2>
+              <div class="inputs">
+                <div class="form-group mb-3">
+                  <label for="siteName" class="mb-1"><i class="fa-solid fa-book-bookmark "></i> Site Name</label>
+                  <input type="text" name="userSiteName" id="siteName" class="form-control" placeholder="Bookmark Name">
+                </div>
+                  <div class="form-group mb-4">
+                      <label for="siteURL" class="mb-1"><i class="fa-solid fa-link"></i> Site URL</label>
+                      <input type="text"  id="siteURL" name="userSiteURL" placeholder="Website URL"   class="form-control">
+                  </div>
+                  <div class="submit d-flex justify-content-center">
+                    <button id="submitBtn"  class="btn btn-color mb-5 w-25 rounded-pill">Submit</button>
+                    <button id="updateBtn"  class="btn btn-color d-none w-25 rounded-pill mb-5">Update Product</button>
+                  </div>
+              </div>
+                <div class="search-box mt-5">
+                  <label for="search" class="mb-1">Search <i class=" fa fa-search"></i></label>
+                  <input oninput="searchByName(this.value)" type="text" id="search" class="form-control">
+                </div>
+              </div>
+            </div>
+            <table class="table text-center table-striped table-hover table-responsive w-75 mx-auto">
+              <thead>
+               <th>Index</th>
+               <th>Website Name</th>
+               <th>Visit</th>
+               <th>Update</th>
+               <th>Delete</th>
+              </thead>
+              <tbody id="tBody">
+              </tbody>
+            </table>
+            <div id="deleteAll" class="d-flex justify-content-center mb-3">
+              <button onclick="deleteAll()" class="btn btn-color d-none" id="deleteAllBtn">Delete All</button>
+            </div>
+        </div>
+        <div id="boxInfo" class="position-fixed start-0 top-0 end-0 bottom-0 d-flex justify-content-center align-items-center d-none">
+          <div class="box-content p-5 rounded-end-pill rounded-bottom-pill shadow-lg">
+            <div class="box-header d-flex justify-content-between align-items-center mb-4">
+              <div class="circles d-flex">
+                <span class="rounded-circle me-2"></span>
+                <span class="rounded-circle me-2"></span>
+                <span class="rounded-circle"></span>
+              </div>
+              <button class="btn" id="closeBtn">
+                <i id="close" class="fa-solid fa-xmark close fs-3"></i>
+              </button>
+            </div>
+            <p class="m-0 pb-2">
+              Site <span> Name </span> or <span> URL </span> is not valid, Please follow the rules below :
+            </p>
+            <ol class="rules list-unstyled m-0">
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i>
+                Site name must contain at least<span> 3 characters</span>
+                
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i>
+               Site URL must start with:<span> https://www.</span> / <span>http://www.</span> / <span>www.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
